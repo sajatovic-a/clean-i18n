@@ -1,0 +1,29 @@
+{
+  "name": "i18n-cleaner",
+  "version": "0.0.18",
+  "description": "Make your translation files clean.",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "i18n-cleaner-setup": "./bin/cli-setup",
+    "i18n-cleaner-sort": "./bin/cli-sort",
+    "i18n-cleaner-clean": "./bin/cli-clean"
+  },
+  "scripts": {
+    "clean": "rm -rf dist/*",
+    "build": "tsc",
+    "prepublish": "yarn clean && chmod +x ./bin/* && yarn build && yarn pack"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.2"
+  }
+}

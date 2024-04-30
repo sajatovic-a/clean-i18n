@@ -1,0 +1,5 @@
+dist
+node_modules
+i18n-cleaner*
+
+.DS_Store
