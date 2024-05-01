@@ -9,4 +9,5 @@
     "skipLibCheck": true
   },
   "include": ["src/**/*", "types.d.ts"],
+  "exclude": ["src/tests/**/*"]
 }
