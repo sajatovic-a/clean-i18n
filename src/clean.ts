@@ -32,7 +32,7 @@ export const clean = async () => {
       const usedKeys = getUsedTranslationKeys(transKeys, keys)
       translations.forEach((translation, index) => {
         const usedTranslation = getUsedTranslation(translation, usedKeys);
-        const writePathUsed = path.join(process.cwd(),translationFilePaths[index].replace('.json', overwriteWithClean ? '.json' : '.clean.json'));
+        const writePathUsed = path.join(process.cwd(),translationFilePaths[index].replace('.json', overwriteWithClean ? '.json' : '.cleaned.json'));
         writeFile(writePathUsed, usedTranslation);
       })
 

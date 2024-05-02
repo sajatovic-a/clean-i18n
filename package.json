@@ -1,13 +1,13 @@
 {
-  "name": "i18n-cleaner",
+  "name": "clean-i18n",
   "version": "0.0.18",
   "description": "Make your translation files clean.",
   "license": "MIT",
   "private": false,
   "bin": {
-    "i18n-cleaner-setup": "./bin/cli-setup",
-    "i18n-cleaner-sort": "./bin/cli-sort",
-    "i18n-cleaner-clean": "./bin/cli-clean"
+    "clean-i18n-setup": "./bin/cli-setup",
+    "clean-i18n-sort": "./bin/cli-sort",
+    "clean-i18n-clean": "./bin/cli-clean"
   },
   "scripts": {
     "clean": "rm -rf dist/*",

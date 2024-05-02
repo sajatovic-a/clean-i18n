@@ -1,5 +1,5 @@
 dist
 node_modules
-i18n-cleaner*
+clean-i18n*
 
 .DS_Store

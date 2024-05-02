@@ -9,7 +9,7 @@ export function getConfig(): Config {
   const config: Config = Object.create({...CONFIG});
   
   try {
-    const configPath = path.join(process.cwd(), '.i18ncleanerrc.json');
+    const configPath = path.join(process.cwd(), '.cleani18nrc.json');
     const fileContent = fs.readFileSync(configPath, 'utf8');
     const userConfig = JSON.parse(fileContent);
     Object.assign(config, userConfig);

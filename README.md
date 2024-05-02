@@ -1,9 +1,9 @@
 # WIP
 This is work in progress!
 
-# i18n-cleaner
+# clean-i18n
 
-`i18n-cleaner` is a utility library designed to help maintain translation files in your projects. For now it allows you to sort translation keys and remove unused ones, ensuring that your i18n files are clean and up-to-date.
+`clean-i18n` is a utility library designed to help maintain translation files in your projects. For now it allows you to sort translation keys and remove unused ones, ensuring that your i18n files are clean and up-to-date.
 
 ## Features
 
@@ -12,17 +12,17 @@ This is work in progress!
 
 ## Installation
 
-You can install `i18n-cleaner` using NPX and set it up directly in your project. Run the following command in your project root:
+You can install `clean-i18n` using NPX and set it up directly in your project. Run the following command in your project root:
 
 ```bash
-npx i18n-cleaner-setup
+npx clean-i18n-setup
 ```
 
-This command adds the necessary configuration file and scripts to your project, integrating `i18n-cleaner` seamlessly.
+This command adds the necessary configuration file and scripts to your project, integrating `clean-i18n` seamlessly.
 
 ## Usage
 
-After installation, you can use `i18n-cleaner` through the configured scripts or directly via command line. Here’s how you can perform common tasks:
+After installation, you can use `clean-i18n` through the configured scripts or directly via command line. Here’s how you can perform common tasks:
 
 ### Sorting Keys
 
@@ -48,7 +48,7 @@ yarn clean-translation
 
 ## Configuration
 
-The behavior of `i18n-cleaner` can be customized via the `i18n-cleaner-config.json` file. Here are the configuration options:
+The behavior of `clean-i18n` can be customized via the `clean-i18n-config.json` file. Here are the configuration options:
 
 ```json
 {
