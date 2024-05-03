@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { collectKeys, extractKeys, sortKeys } from '../utils';
+import { collectKeys, extractKeys, getUsedTranslation, getUsedTranslationKeys, sortKeys } from '../utils';
 import { CONFIG } from '../config';
 
 const translationObject = {
@@ -140,6 +140,36 @@ const componentExtractedKeys = [
   'app.footer.privacy',
 ];
 
+const usedTranslationObject = {
+  "app": {
+    "header": {
+      "title": "My Application",
+    },
+    "menu": [
+      {
+        "name": "Home",
+        "link": "/home"
+      },
+      {
+        "name": "About",
+        "link": "/about"
+      },
+      {
+        "name": "Contact",
+        "link": "/contact"
+      }
+    ],
+    "footer": {
+      "privacy": "Privacy Policy",
+      "copy": "Copyright {{ year }} by someone",
+    }
+  },
+  "success": "Action was successful",
+  "errors": {
+    "500": "Internal server error",
+  },
+}
+
 
 describe('sort', () => {
   it('should sort keys', () => {
@@ -194,3 +224,16 @@ describe('extract keys', () => {
     expect(Array.from(keys)).not.toContain('message');
   });
 });
+
+describe('translation', () => {
+  it('should return translation object with only used keys', () => {
+    const transKeys = new Set<string>();
+    collectKeys(translationObject, '', transKeys);
+
+    const usedKeys = extractKeys(componentString, CONFIG.translationKeyPatterns.map((pattern) => new RegExp(pattern, 'g')));
+    const keys = getUsedTranslationKeys(transKeys, usedKeys);
+
+    const trans = getUsedTranslation(translationObject, keys)
+    expect(JSON.stringify(usedTranslationObject)).toEqual(JSON.stringify(trans))
+  });
+})
